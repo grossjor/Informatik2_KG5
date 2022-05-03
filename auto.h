@@ -1,9 +1,11 @@
-// V01_commit test 3
+// V02
 #pragma once
 #include <iostream>
 #include <string>
 using namespace std;
+
 class Auto {
+
 private:
 	int radzahl = 4;
 	string farbe = "rot";
@@ -14,6 +16,12 @@ private:
 	int tankgroesse = 60;
 
 public:
+	//Standardkonstruktor
+	Auto() {}
+
+	//Allgemeiner Konstruktor
+	Auto(int tankgroesse, float tankinhalt, float spritverbrauch);
+
 	void fahren(float strecke) {
 		//float strecke;
 		//cout << "Strecke angeben: ";
@@ -29,7 +37,6 @@ public:
 		cout << "aktuelle Tankfuellung: " << tankinhalt << " Liter.\n";
 	}
 
-public:
 	void tanken(int tankmenge) {
 		//cout << "Tankmenge in L angeben: ";
 		//cin >> tankmenge;
@@ -45,3 +52,9 @@ public:
 	}
 
 };
+
+Auto::Auto(int tg, float ti, float sv) {
+	tankgroesse = tg;
+	tankinhalt = ti;
+	spritverbrauch = sv;
+}
