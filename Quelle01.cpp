@@ -1,12 +1,8 @@
-/*
-Aus Zeitgr�nden schaffen wir es leider nicht, die fertige Aufgabe heute abzugeben.
-Hier erstmal der aktuelle Stand�, ohne header-Datei und konstruktoren.
-Die fertige Version sollte morgen fertig sein.
-*/
-
-
-//#pragma once
-#include <G:\Studium\Informatik2\auto.h>
+// V01: test von Auto.h & Funktionen
+#include "Auto.h"
+#include <iostream>
+#include <string>
+using namespace std;
 
 int main() {
 	Auto a;
@@ -14,5 +10,4 @@ int main() {
 	a.tanken(10);
 	a.fahren(5);
 	a.tanken(70);
-	//a.tanken(61);
 }
