@@ -1,4 +1,4 @@
-// V02: Standard- und allgemeiner konstruktor
+// V03: Kopierkonstruktor und Destruktor
 #include "Auto.h"
 #include <iostream>
 #include <string>
@@ -20,5 +20,13 @@ int main() {
 	a1.tanken(10);
 	a1.fahren(5);
 	a1.tanken(70);
-	
+	cout << "\n";
+
+	cout << "Auto 2:\n";
+	Auto a2 = a1;
+	a2.fahren(188);
+	a2.tanken(10);
+	a2.fahren(5);
+	a2.tanken(70);
+	cout << "\n";
 }

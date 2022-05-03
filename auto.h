@@ -1,4 +1,4 @@
-// V02
+// V03
 #pragma once
 #include <iostream>
 #include <string>
@@ -21,6 +21,17 @@ public:
 
 	//Allgemeiner Konstruktor
 	Auto(int tankgroesse, float tankinhalt, float spritverbrauch);
+
+	//Kopierkonstruktor
+	Auto(const Auto & other) {
+		tankgroesse = other.tankgroesse;
+		tankinhalt = other.tankinhalt;
+		spritverbrauch = other.spritverbrauch;
+	}
+
+	//Destruktor
+	~Auto() {}
+
 
 	void fahren(float strecke) {
 		//float strecke;
