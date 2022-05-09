@@ -13,21 +13,18 @@ private:
 public:
   int irgendeinjahr = 0;
 
-  Datum () {}
+Datum () {}
 
   Datum (int tag, int monat, int Jahr);
 
   ~Datum () {}
 
-int gettag() return {tag;}
-int getmonat() return {tag;}
-int getjahr) return {tag;}
+int gettag() {return tag;}
+int getmonat() {return monat;}
+int getjahr() {return jahr;}
 
-  void IstSchaltjahr(int irgendeinjahr) {
+void istschaltjahr(int irgendeinjahr) {
 
-
-    int irgendeinjahr=0;
-    {
     cout<<"Geben sie Die Jahreszahl ein: \n"<<endl;
     cin>>irgendeinjahr;
     if ( ( (irgendeinjahr%4==0) && (irgendeinjahr%100!=0) ) || (irgendeinjahr%400==0) )
@@ -42,9 +39,9 @@ int getjahr) return {tag;}
 
     system("PAUSE");
 
-    return 0;
+
     }
 
 
-  }
+
 };

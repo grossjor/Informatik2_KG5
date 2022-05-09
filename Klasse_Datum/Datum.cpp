@@ -4,6 +4,7 @@
 
 
 int main() {
-  IstSchaltjahr()
+Datum a;
+a.istschaltjahr(1);
   return 0;
 }
