@@ -123,7 +123,7 @@ switch (getmonat()) {
 
    }
   ret=ret+gettag();
-   std::cout << ret << '\n';
+   std::cout <<"Der "<<gettag()<<"."<<getmonat()<<". ist Tag Nummer "<< ret <<" des Jahres "<<getjahr()<< '\n';
 
     }
 
