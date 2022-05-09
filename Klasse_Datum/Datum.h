@@ -7,8 +7,9 @@ class Datum {
 
 private:
   int tag = 9;
-  int jahr = 2000;
   int monat = 3;
+  int jahr = 2000;
+
 
 public:
   int irgendeinjahr = 0;
@@ -54,18 +55,51 @@ irgendeinjahr = getjahr();
 
 
 void tagdesjahres(){
-int tage_pro_monat[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-// Volle Monate
-   for (int i = 1; i < monat; i++){
-     ret += tage_pro_monat[i - 1];
-     ret += gettag();
-      std::cout << ret << gettag()<< '\n';
-   }
+
+switch (getmonat()) {
+  case 1:
+    ret = 0;
+    break;
+  case 2:
+    ret=31; //0+31
+    break;
+  case 3:
+    ret=59;  //31+28
+    break;
+  case 4:
+    ret=90; //59+31
+    break;
+  case 5:
+    ret=120; // 90+30
+    break;
+  case 6:
+    ret=151; //120+31
+    break;
+  case 7:
+    ret=181; //151+ 30
+    break;
+  case 8:
+    ret=212; // 181+31
+    break;
+  case 9:
+    ret=243; // 212+31
+    break;
+  case 10:
+    ret=273;// 243+30
+    break;
+  case 11:
+    ret=314;//273+31
+    break;
+  case 12:
+    ret=334;//273+30
+    break;
+}
    if(sjahr == 1 && getmonat()>=3) {
      ret = ret+1;
 
    }
+  ret=ret+gettag();
    std::cout << ret << '\n';
 
     }
