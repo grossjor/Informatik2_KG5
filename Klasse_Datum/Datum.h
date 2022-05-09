@@ -6,13 +6,16 @@ using namespace std;
 class Datum {
 
 private:
-  int tag = 1;
+  int tag = 9;
   int jahr = 2000;
-  int monat = 1;
+  int monat = 3;
 
 public:
   int irgendeinjahr = 0;
   int sjahr = 0;
+  int ret = 0;
+
+
 
 Datum () {}
 
@@ -50,31 +53,21 @@ irgendeinjahr = getjahr();
 
 
 
-void tagdesjahres(int tag, int monat, int jahr){
+void tagdesjahres(){
+int tage_pro_monat[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
 
-        int tage_pro_monat[] = {31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+// Volle Monate
+   for (int i = 1; i < monat; i++){
+     ret += tage_pro_monat[i - 1];
+     ret += gettag();
+      std::cout << ret << gettag()<< '\n';
+   }
+   if(sjahr == 1 && getmonat()>=3) {
+     ret = ret+1;
 
-        int ret = 0;
+   }
+   std::cout << ret << '\n';
 
-        // Volle Monate
-        for (int i = 1; i < monat; i++){
-
-          ret += tage_pro_monat[i - 1];
-        }
-        // Tag des aktuellen Monats
-        ret += tag;
-        // Schaltjahr
-        ret += (ist_schaltjahr(jahr) == true && monat > 2 ? 1 : 0);
-    //    return ret;
-    }
-    bool ist_schaltjahr(int jahr){
-
-        bool schaltjahr = false;
-
-        if (jahr % 4 == 0) schaltjahr = true;
-        if (jahr % 100 == 0) schaltjahr = false;
-        if (jahr % 400 == 0) schaltjahr = true;
-      //  return schaltjahr;
     }
 
 

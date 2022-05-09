@@ -7,6 +7,6 @@ int main() {
 Datum a;
 a.istschaltjahr(1);
 std::cout << a.sjahr << '\n';
-a.tagdesjahres(1);
+a.tagdesjahres();
   return 0;
 }
