@@ -1,4 +1,4 @@
-// V03: Kopierkonstruktor und Destruktor
+// V04: Getter aller privaten Attribute hinzugefügt
 #include "Auto.h"
 #include <iostream>
 #include <string>
@@ -22,6 +22,7 @@ int main() {
 	a1.tanken(70);
 	cout << "\n";
 
+	/*
 	cout << "Auto 2:\n";
 	Auto a2 = a1;
 	a2.fahren(188);
@@ -29,4 +30,14 @@ int main() {
 	a2.fahren(5);
 	a2.tanken(70);
 	cout << "\n";
+	*/
+
+	cout << "Radzahl: " << a.getRadzahl() << "\n";
+	cout << "Farbe: " << a.getFarbe() << "\n";
+	cout << "PS: " << a.getPs() << "\n";
+	cout << "Anzah Sitze: " << a.getAnzahl_sitze() << "\n";
+	cout << "Spritverbrauch: " << a.getSpritverbrauch() << "\n";
+	cout << "Tankinhalt: " << a.getTankinhalt() << "\n";
+	cout << "Tankinhalt Auto1: " << a1.getTankinhalt() << "\n";
+	cout << "Tankgroesse: " << a.getTankgroesse() << "\n";
 }

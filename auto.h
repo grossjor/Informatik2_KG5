@@ -1,4 +1,4 @@
-// V03
+// V04
 #pragma once
 #include <iostream>
 #include <string>
@@ -31,6 +31,15 @@ public:
 
 	//Destruktor
 	~Auto() {}
+
+	//Getter:
+	int getRadzahl() {return radzahl;}
+	string getFarbe() {return farbe;}
+	int getPs() {return ps;}
+	int getAnzahl_sitze() {return anzahl_sitze;}
+	float getSpritverbrauch() { return spritverbrauch; }
+	float getTankinhalt() { return tankinhalt; }
+	int getTankgroesse() { return tankgroesse; }
 
 
 	void fahren(float strecke) {
