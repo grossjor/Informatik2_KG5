@@ -106,3 +106,4 @@ switch (getmonat()) {
 
 
 };
+//nebenbei verstehe ich auch nicht was mit der geschätzig methode gemeint ist, und jetzt ist es zu spät um zu fragen
