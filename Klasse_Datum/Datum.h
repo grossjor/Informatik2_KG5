@@ -9,26 +9,43 @@ private:
   int tag = 9;
   int monat = 3;
   int jahr = 2000;
+  int counter = 0;
 
 
 public:
   int irgendeinjahr = 0;
   int sjahr = 0;
   int ret = 0;
-
-
+  int s=0;
+  int* setcounter { &counter};
+  int localboi = 0; //sagt ob die klasse iniziert wurde und den counter schon erhöhrt hat
+  int maxclasses = 2; //maximale anzahl an inizierten klassen
 
 Datum () {}
 
-  Datum (int tag, int monat, int Jahr);
 
-  ~Datum () {}
+Datum (int tag, int monat, int Jahr);
+
+~Datum () {}
 
 int gettag() {return tag;}
 int getmonat() {return monat;}
 int getjahr() {return jahr;}
+int getcounter() {return counter;}
+
+
 
 void istschaltjahr(int irgendeinjahr) {
+
+  if (getcounter()==1) {
+    std::cout << "das sind zu viele klassen" << '\n';
+  }
+  if (localboi==maxclasses) {
+  *setcounter= *setcounter+1;
+  localboi++;
+  };
+ /*        versuch einen interationenzähler zu verwirklichen, um den aufgabenteil mit warnung bei zu vielen
+klassen gerecht zu werden*/
 irgendeinjahr = getjahr();
     //cout<<"Geben sie Die Jahreszahl ein: \n"<<endl;
     //cin>>irgendeinjahr;
@@ -55,7 +72,13 @@ irgendeinjahr = getjahr();
 
 
 void tagdesjahres(){
-
+  if (getcounter()==maxclasses) {
+    std::cout << "das sind zu viele klassen" << '\n';
+  }
+if (localboi==0) {
+*setcounter= *setcounter+1;
+localboi++;
+}
 
 switch (getmonat()) {
   case 1:
@@ -106,4 +129,4 @@ switch (getmonat()) {
 
 
 };
-//nebenbei verstehe ich auch nicht was mit der geschätzig methode gemeint ist, und jetzt ist es zu spät um zu fragen
+//nebenbei verstehe ich auch nicht was mit der geschwätzig methode gemeint ist, und jetzt ist es zu spät um zu fragen
