@@ -2,15 +2,16 @@
 #include <iostream>
 #include <string>
 using namespace std;
-extern int counter= 0;
+//extern int counter= 0;
 class Datum {
 
 private:
   int tag = 9;
   int monat = 3;
   int jahr = 2000;
-
-
+  int point_nummer;
+  static int point_zaehler;
+  int counter= 0;
 
 public:
   int irgendeinjahr = 0;
@@ -19,14 +20,28 @@ public:
   int s=0;
   int* setcounter { &counter};
   int localboi = 0; //sagt ob die klasse iniziert wurde und den counter schon erhöhrt hat
-  int maxclasses = 2; //maximale anzahl an inizierten klassen
+  int maxclasses = 1; //maximale anzahl an inizierten klassen
+static int get_pointcount() { return point_zaehler; }
+Datum () {
+  point_nummer = ++point_zaehler;
+  cout <<"Standardkonstruktor von Objekt Nummer "<<point_nummer << endl;
+  if (point_zaehler>=maxclasses) {
+    std::cout << "Das sind zu viele Instanzen der Klasse" << '\n';
+  }
+}
 
-Datum () {}
 
+Datum (int tag, int monat, int Jahr){
+  point_nummer = ++point_zaehler;
+  cout <<"Allgemeiner Konstruktor von Objekt Nummer"<<point_nummer<<endl;
+  if (point_zaehler>=maxclasses) {
+    std::cout << "Das sind zu viele Instanzen der Klasse" << '\n';
+  }
+};
 
-Datum (int tag, int monat, int Jahr);
-
-~Datum () {}
+~Datum () {
+  point_nummer = --point_zaehler;
+}
 
 int gettag() {return tag;}
 int getmonat() {return monat;}
@@ -37,7 +52,7 @@ int getcounter() {return counter;}
 
 void istschaltjahr(int irgendeinjahr) {
 
-  if (getcounter()>=maxclasses) {
+/*  if (getcounter()>=maxclasses) {
     std::cout << "das sind zu viele klassen" << '\n';
   }
   if (localboi==0) {
@@ -71,13 +86,13 @@ irgendeinjahr = getjahr();
 
 
 void tagdesjahres(){
-  if (getcounter()==maxclasses) {
+/*  if (getcounter()>=maxclasses) {
     std::cout << "das sind zu viele klassen" << '\n';
   }
 if (localboi==0) {
   counter= counter+1;
   localboi++;
-}
+}*/
 irgendeinjahr = getjahr();
 
     if ( ( (irgendeinjahr%4==0) && (irgendeinjahr%100!=0) ) || (irgendeinjahr%400==0) )

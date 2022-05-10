@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 
-
+int Datum::point_zaehler{ 0 };
 int main() {
 
 Datum a;
