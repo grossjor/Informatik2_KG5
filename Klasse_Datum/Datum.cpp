@@ -7,8 +7,6 @@ int main() {
 
 Datum a;
 a.istschaltjahr(1);
-
 a.tagdesjahres();
-  return 0;
-
+return 0;
 }

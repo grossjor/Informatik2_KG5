@@ -2,14 +2,14 @@
 #include <iostream>
 #include <string>
 using namespace std;
-
+extern int counter= 0;
 class Datum {
 
 private:
   int tag = 9;
   int monat = 3;
   int jahr = 2000;
-  int counter = 0;
+
 
 
 public:
@@ -37,18 +37,17 @@ int getcounter() {return counter;}
 
 void istschaltjahr(int irgendeinjahr) {
 
-  if (getcounter()==1) {
+  if (getcounter()>=maxclasses) {
     std::cout << "das sind zu viele klassen" << '\n';
   }
-  if (localboi==maxclasses) {
-  *setcounter= *setcounter+1;
-  localboi++;
-  };
+  if (localboi==0) {
+    counter= counter+1;
+    localboi++;
+  }
  /*        versuch einen interationenzähler zu verwirklichen, um den aufgabenteil mit warnung bei zu vielen
 klassen gerecht zu werden*/
 irgendeinjahr = getjahr();
-    //cout<<"Geben sie Die Jahreszahl ein: \n"<<endl;
-    //cin>>irgendeinjahr;
+
     if ( ( (irgendeinjahr%4==0) && (irgendeinjahr%100!=0) ) || (irgendeinjahr%400==0) )
 
     {
@@ -76,10 +75,23 @@ void tagdesjahres(){
     std::cout << "das sind zu viele klassen" << '\n';
   }
 if (localboi==0) {
-*setcounter= *setcounter+1;
-localboi++;
+  counter= counter+1;
+  localboi++;
 }
+irgendeinjahr = getjahr();
 
+    if ( ( (irgendeinjahr%4==0) && (irgendeinjahr%100!=0) ) || (irgendeinjahr%400==0) )
+
+    {
+    //cout<<"Schaltjahr!"<<endl;
+    sjahr = 1;
+
+    }
+    else
+    {
+    //cout<<"Kein Schaltjahr!"<<endl;
+    sjahr = 0;
+    }
 switch (getmonat()) {
   case 1:
     ret = 0;
