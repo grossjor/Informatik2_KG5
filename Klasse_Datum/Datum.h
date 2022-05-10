@@ -11,6 +11,7 @@ private:
   int jahr = 2000;
   int point_nummer;
   static int point_zaehler;
+  static bool flag;
   int counter= 0;
 
 public:
@@ -24,7 +25,10 @@ public:
 static int get_pointcount() { return point_zaehler; }
 Datum () {
   point_nummer = ++point_zaehler;
+  if (flag==true) {
+
   cout <<"Standardkonstruktor von Objekt Nummer "<<point_nummer << endl;
+}
   if (point_zaehler>=maxclasses) {
     std::cout << "Das sind zu viele Instanzen der Klasse" << '\n';
   }
@@ -33,7 +37,8 @@ Datum () {
 
 Datum (int tag, int monat, int Jahr){
   point_nummer = ++point_zaehler;
-  cout <<"Allgemeiner Konstruktor von Objekt Nummer"<<point_nummer<<endl;
+    if (flag==true) {
+  cout <<"Allgemeiner Konstruktor von Objekt Nummer"<<point_nummer<<endl;}
   if (point_zaehler>=maxclasses) {
     std::cout << "Das sind zu viele Instanzen der Klasse" << '\n';
   }
@@ -52,15 +57,6 @@ int getcounter() {return counter;}
 
 void istschaltjahr(int irgendeinjahr) {
 
-/*  if (getcounter()>=maxclasses) {
-    std::cout << "das sind zu viele klassen" << '\n';
-  }
-  if (localboi==0) {
-    counter= counter+1;
-    localboi++;
-  }
- /*        versuch einen interationenzähler zu verwirklichen, um den aufgabenteil mit warnung bei zu vielen
-klassen gerecht zu werden*/
 irgendeinjahr = getjahr();
 
     if ( ( (irgendeinjahr%4==0) && (irgendeinjahr%100!=0) ) || (irgendeinjahr%400==0) )
@@ -96,15 +92,11 @@ if (localboi==0) {
 irgendeinjahr = getjahr();
 
     if ( ( (irgendeinjahr%4==0) && (irgendeinjahr%100!=0) ) || (irgendeinjahr%400==0) )
-
     {
-    //cout<<"Schaltjahr!"<<endl;
     sjahr = 1;
-
     }
     else
     {
-    //cout<<"Kein Schaltjahr!"<<endl;
     sjahr = 0;
     }
 switch (getmonat()) {

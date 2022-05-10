@@ -3,6 +3,7 @@
 #include <string>
 
 int Datum::point_zaehler{ 0 };
+bool Datum::flag{false};
 int main() {
 
 Datum a;
