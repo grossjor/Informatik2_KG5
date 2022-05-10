@@ -45,6 +45,9 @@ Datum (int tag, int monat, int Jahr){
 };
 
 ~Datum () {
+
+  if (flag==true) {
+cout <<"Destruktor von Objekt Nummer"<<point_nummer<<endl;}
   point_nummer = --point_zaehler;
 }
 
