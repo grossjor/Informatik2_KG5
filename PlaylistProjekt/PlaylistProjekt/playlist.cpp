@@ -317,7 +317,7 @@ void playlist::PlaylistSpeichern()
 void playlist::PlaylistLaden()
 /*====================================================*/
 {
-	struct titel* ptr, * tLetzter{ NULL };
+	struct titel* ptr, * tLetzter{ NULL }; //verschoben aus while loop
 
 
 	titel tmp;
@@ -337,11 +337,9 @@ void playlist::PlaylistLaden()
 	// aktuelle Daten loeschen
 	AlleTitelLoeschen();
 
-	//struct titel *tLetzter{ NULL };
-
 	while (!Quelle.eof())
 	{
-		//struct titel* ptr, * tLetzter{NULL};
+		//struct titel* ptr, * tLetzter{NULL}; //steht oben unter Funktion
 		getline(Quelle, hilfe);
 		if (hilfe.length() == 0)
 			break;
@@ -368,9 +366,6 @@ void playlist::PlaylistLaden()
 				tLetzter->next = ptr;
 				tLetzter = ptr;
 			}
-			//letzterTitel = ptr;
-			//cout << "test1\n";
-			//break;
 		}
 	}
 
