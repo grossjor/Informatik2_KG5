@@ -328,6 +328,8 @@ void playlist::PlaylistLaden()
 	// aktuelle Daten loeschen
 	AlleTitelLoeschen();
 
+	struct titel* letzterTitel{ NULL };
+
 	while (!Quelle.eof())
 	{
 		struct titel* ptr;
@@ -346,8 +348,22 @@ void playlist::PlaylistLaden()
 			getline(Quelle, ptr->interpret);
 			getline(Quelle, hilfe);
 			ptr->kategorie = static_cast<mkat> (atoi(hilfe.c_str()));
+			
+			//Änderung:
+			ptr->next = NULL; //von start_pointer auf NULL
+			if (start_pointer == NULL) {
+				start_pointer = ptr;
+			//	letzterTitel = ptr;
+			}
+			else {
+				letzterTitel->next = ptr;
+			//	letzterTitel = ptr;
+			}
+			letzterTitel = ptr;
 			ptr->next = start_pointer;
 			start_pointer = ptr;
+			cout << "test1\n";
+			break;
 		}
 	}
 
@@ -355,5 +371,33 @@ void playlist::PlaylistLaden()
 }
 
 
+void playlist::PlaylistAbspielen(bool alle, string titel, int zeit) {
+	struct titel* ptr = start_pointer;
 
+	if (ptr == NULL) {
+		cout << "leere Playlist" << endl;
+		system("pause");
+		return;
+	}
+	if(alle == true) {
+		cout << "\a" << ptr->name << ", " << ptr->interpret << ", " << enumkat_in_string(ptr->kategorie) << endl;
+	}
+	else {
+		while (ptr != NULL && (ptr->name != titel)) 
+			ptr = ptr->next;
+		
+		if (ptr == NULL) {
+			cout << "X"<<endl;
+			system("pause");
+			return;
+		}
+		else {
+			cout << "\a" << ptr->name << ", " << ptr->interpret << ", " << enumkat_in_string(ptr->kategorie) << endl;
+			clock_t tCounter = zeit * clock();
+			while (tCounter > clock());
+		}
+		
+		
+	}
+}
 
