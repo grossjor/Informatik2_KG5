@@ -72,19 +72,21 @@ int main(void)
 			}
 			break;
 		case 5:
+			cout << "case 5\n";
 			// Playlist abspielen
+			
 			my_playlist.ZeileEingeben("alle titel abspielen? (y/n)", temp);
 			if (temp=="y") {
-				my_playlist.PlaylistAbspielen(true, "", 3);
+				my_playlist.PlaylistAbspielen(true, "", 3000);
 				system("pause");
 			}
 			if(temp=="n") {
 				my_playlist.ZeileEingeben("Titel eingeben:", Titel);
-				my_playlist.PlaylistAbspielen(false,Titel, 5);
+				my_playlist.PlaylistAbspielen(false,Titel, 5000);
 			}
 
 			break;
-
+			
 
 		case 6:
 			// Playlist speichern */

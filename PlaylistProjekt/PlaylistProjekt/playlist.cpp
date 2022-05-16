@@ -12,8 +12,15 @@
 #include <string>
 #include "playlist.h"
 #include <fstream>
+#include <time.h>
 
 using namespace std;
+
+void delay(unsigned int ms) {
+	clock_t goal = ms + clock();
+	while (goal > clock());
+}
+
 
 // Hilfsmethode zur EIngabe eines Titels
 void playlist::BenutzerdatenEingeben(string& titel, string& interpret, mkat& kategorie)
@@ -310,6 +317,8 @@ void playlist::PlaylistSpeichern()
 void playlist::PlaylistLaden()
 /*====================================================*/
 {
+	struct titel* ptr, * tLetzter{ NULL };
+
 
 	titel tmp;
 	ifstream Quelle;
@@ -328,11 +337,11 @@ void playlist::PlaylistLaden()
 	// aktuelle Daten loeschen
 	AlleTitelLoeschen();
 
-	struct titel* letzterTitel{ NULL };
+	//struct titel *tLetzter{ NULL };
 
 	while (!Quelle.eof())
 	{
-		struct titel* ptr;
+		//struct titel* ptr, * tLetzter{NULL};
 		getline(Quelle, hilfe);
 		if (hilfe.length() == 0)
 			break;
@@ -353,17 +362,15 @@ void playlist::PlaylistLaden()
 			ptr->next = NULL; //von start_pointer auf NULL
 			if (start_pointer == NULL) {
 				start_pointer = ptr;
-			//	letzterTitel = ptr;
+				tLetzter = ptr;
 			}
 			else {
-				letzterTitel->next = ptr;
-			//	letzterTitel = ptr;
+				tLetzter->next = ptr;
+				tLetzter = ptr;
 			}
-			letzterTitel = ptr;
-			ptr->next = start_pointer;
-			start_pointer = ptr;
-			cout << "test1\n";
-			break;
+			//letzterTitel = ptr;
+			//cout << "test1\n";
+			//break;
 		}
 	}
 
@@ -380,7 +387,11 @@ void playlist::PlaylistAbspielen(bool alle, string titel, int zeit) {
 		return;
 	}
 	if(alle == true) {
-		cout << "\a" << ptr->name << ", " << ptr->interpret << ", " << enumkat_in_string(ptr->kategorie) << endl;
+		while (ptr != NULL) {
+			cout << "\a" << ptr->name << ", " << ptr->interpret << ", " << enumkat_in_string(ptr->kategorie) << endl;
+			ptr = ptr->next;
+			delay(zeit);
+		}
 	}
 	else {
 		while (ptr != NULL && (ptr->name != titel)) 
@@ -393,8 +404,7 @@ void playlist::PlaylistAbspielen(bool alle, string titel, int zeit) {
 		}
 		else {
 			cout << "\a" << ptr->name << ", " << ptr->interpret << ", " << enumkat_in_string(ptr->kategorie) << endl;
-			clock_t tCounter = zeit * clock();
-			while (tCounter > clock());
+			delay(zeit);
 		}
 		
 		
