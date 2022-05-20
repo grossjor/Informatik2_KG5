@@ -2,8 +2,10 @@
 #include <iostream>
 #include <string>
 
+
+
 int main() {
-Transportmittel(1,2);
-bewegen(Nord);
+Transportmittel a;
+void.bewegen();
   return 0;
 }

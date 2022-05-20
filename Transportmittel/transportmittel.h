@@ -9,9 +9,8 @@ private:
   double hoehe;
   double breite;
 public:
-  Transportmittel(double hoehe,double breite)
-  {
-  }
+  Transportmittel( double hoehe, double breite)
+  {}
   void bewegen (string richtung){
     std::cout << "In Richtung "<<richtung<<" bewegen" << '\n';
   }
