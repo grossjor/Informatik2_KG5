@@ -5,7 +5,5 @@
 
 
 int main() {
-Transportmittel a;
-void.bewegen();
   return 0;
 }

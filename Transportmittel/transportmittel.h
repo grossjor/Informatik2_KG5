@@ -6,14 +6,18 @@ using namespace std;
 class Transportmittel
 {
 private:
-  double hoehe;
-  double breite;
+  double hoehe=3;
+  double breite=2;
 public:
-  Transportmittel( double hoehe, double breite)
+  Transportmittel(){}
+  Transportmittel(double breite, double hoehe)
   {}
   void bewegen (string richtung){
     std::cout << "In Richtung "<<richtung<<" bewegen" << '\n';
   }
   double gethoehe() {return hoehe;}
   double getbreite() {return breite;}
+};
+class Wasserfahrzeug : public Fahrzeug{
+
 };
