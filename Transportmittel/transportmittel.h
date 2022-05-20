@@ -9,7 +9,7 @@ private:
   double hoehe;
   double breite;
 public:
-  Transportmittel(hoehe, breite)
+  Transportmittel(double hoehe,double breite)
   {
   }
   void bewegen (string richtung){
@@ -17,4 +17,4 @@ public:
   }
   double gethoehe() {return hoehe;}
   double getbreite() {return breite;}
-}
+};
