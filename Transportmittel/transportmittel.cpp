@@ -7,7 +7,7 @@ int main() {
 
 Transportmittel a;
 Transportmittel(1,2);
-std::cout << a.gethoehe() << '\n';
+std::cout << hoehe << '\n';
 a.bewegen("West");
   return 0;
 }

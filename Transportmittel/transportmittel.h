@@ -69,3 +69,33 @@ class Fahrrad : public LandTransportmittel{
     Fahrrad(double hoehe, double breite, int radzahl, int anzahlgaenge){
       }
 };
+class Rickscha : public LandTransportmittel{
+private:
+  std::string farbe;
+  int anzahlpersonen;
+public:
+  void schieben(double km){
+    }
+  void ziehen(int anzahlpersonen){
+
+    }
+  Rickscha(){
+    }
+  Rickscha(double hoehe, double breite, int radzahl, std::string farbe){
+    }
+};
+class Auto : public LandTransportmittel{
+private:
+  double spritverbrauch;
+  int liter;
+public:
+  void tanken(int liter){
+    }
+  void fahren(double km){
+
+    }
+  Auto(){
+    }
+  Auto(double hoehe, double breite, int radzahl, int liter, double km){
+    }
+};
