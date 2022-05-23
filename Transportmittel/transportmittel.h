@@ -87,15 +87,11 @@ class WasserTransportmittel : public Transportmittel{
 
 class Fahrrad : public LandTransportmittel{
   private:
-    int anzahlgaenge;
+    int anzahlgaenge=1;
   public:
-    void freihaendigfahren (string name){
-      std::cout <<name<< " faehrt freihaendig" << '\n';
-      }
+
     int getgaenge() {return anzahlgaenge;}
-    void schieben(double km){
-      std::cout << "man schiebt das rad fuer "<<km<<" km" << '\n';
-      }
+
     Fahrrad(){
       }
     Fahrrad(double hoehe, double breite, int radzahl, int anzahlgaenge){
@@ -108,6 +104,13 @@ class Fahrrad : public LandTransportmittel{
       std::cout << "Fahrrad Radzahl: "<<radzahl << '\n';
       std::cout << "Fahrrad anzahlgaenge: "<<anzahlgaenge << '\n';
           }
+      void freihaendigfahren (string name){
+          std::cout <<name<< " faehrt freihaendig" << '\n';
+        }
+
+      void schieben(double km){
+          std::cout << "man schiebt das rad fuer "<<km<<" km" << '\n';
+        }
   ~Fahrrad(){}
 };
 
@@ -115,13 +118,10 @@ class Fahrrad : public LandTransportmittel{
 class Rickscha : public LandTransportmittel{
 private:
   std::string farbe;
-  int anzahlpersonen;
-public:
-  void schieben(double km){
-    }
-  void ziehen(int anzahlpersonen){
 
-    }
+public:
+
+  std::string getfarbe() {return farbe;}
   Rickscha(){
     }
   Rickscha(double hoehe, double breite, int radzahl, std::string farbe){
@@ -134,6 +134,13 @@ public:
     std::cout << "Rickscha Radzahl: "<<radzahl << '\n';
     std::cout << "Rickscha farbe: "<<farbe << '\n';
     }
+    void schieben(double km){
+      std::cout << "Die Rickscha "<<km <<" km weit ziehen" << '\n';
+      }
+    void ziehen(int anzahlpersonen){
+      std::cout <<anzahlpersonen<< " Personen in der Rickscha befoerdern" << '\n';
+      }
+
     ~Rickscha(){}
 };
 
@@ -141,26 +148,28 @@ public:
 class Auto : public LandTransportmittel{
 private:
   double spritverbrauch;
-  int liter;
 public:
-  void tanken(int liter){
-    }
-  void fahren(double km){
-
-    }
+ double getspritverbrauch() {return spritverbrauch;}
   Auto(){
     }
   Auto(double hoehe, double breite, int radzahl, int liter, double km){
-    hoehe=4;
+  /*  hoehe=4;
     breite=8;
     radzahl=4;
     liter=69;
-    km=420;
+    km=420; */
     std::cout << "Auto hoehe: "<<hoehe << '\n';
     std::cout << "Auto breite: "<< breite << '\n';
     std::cout << "Auto Radzahl: "<<radzahl << '\n';
     std::cout << "Auto liter: "<<liter << '\n';
     std::cout << "Auto km: "<<km << '\n';
     }
+    void tanken(int liter){
+      std::cout << liter<<" Liter tanken" << '\n';
+      }
+    void fahren(double km){
+      std::cout <<km<< " km weit fahren" << '\n';
+
+      }
     ~Auto(){}
 };
