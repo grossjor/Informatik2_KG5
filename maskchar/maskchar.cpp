@@ -1,4 +1,3 @@
-
 #include <string>
 #include <iostream>
 using namespace std;
@@ -19,11 +18,9 @@ int main(int argc, char const *argv[]) {
 
 	char c;
 	cout << "Enter Character ( in lower case ) : \n";
-	cin >> c;
-	cout << "Output :  "  << lowerToUpper(c);
+	cout << "Output :  "  << lowerToUpper(*argv[1]);
 	cout << "\n\nEnter Character ( in Upper case ) : \n";
-	cin >> c;
-	cout << "Output :  "  << upperToLower(c);
-std::cout << '\n';
+	cout << "Output :  "  << upperToLower(*argv[2]);
+	cout <<"\n";
 	return 0;
 }
