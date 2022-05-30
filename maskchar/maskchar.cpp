@@ -11,13 +11,12 @@ char lowerToUpper(char c)
 
 char upperToLower(char c)
 {
-	// ASCII value of space (' ') is 32
-	// so it is equivalent to (1 << 5 )
 	return (c | ' ');
 }
 
-int main()
-{
+int main(int argc, char const *argv[]) {
+
+
 	char c;
 	cout << "Enter Character ( in lower case ) : \n";
 	cin >> c;
@@ -25,6 +24,6 @@ int main()
 	cout << "\n\nEnter Character ( in Upper case ) : \n";
 	cin >> c;
 	cout << "Output :  "  << upperToLower(c);
-
+std::cout << '\n';
 	return 0;
 }
