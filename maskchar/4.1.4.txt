@@ -1,0 +1,3 @@
+Unicode Zeichen Hex
+U+00E4	ä	c3 a4
+U+1308	ገ (GA) 0xE1 0x8C 0x88
