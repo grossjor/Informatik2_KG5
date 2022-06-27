@@ -3,5 +3,5 @@
 using namespace std;
 int main() {
     unsigned int n = std::thread::hardware_concurrency();
-    std::cout << n << " concurrent threads are supported.\n";
+    std::cout << n << "  Prozessorkerne sind in ihrem System vorhanden.\n";
 }
