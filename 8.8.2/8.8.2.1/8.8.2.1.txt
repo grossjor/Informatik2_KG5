@@ -1,1 +1,2 @@
 die funktion gibt auch virtuelle kerne an, der ryzen 5 2600 ´hat 6 hardware kerne mit je 2 virtuellen kernen
+kompiliert in ubuntu for windows mit mingw
