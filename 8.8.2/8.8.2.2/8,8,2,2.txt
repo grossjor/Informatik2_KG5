@@ -1,0 +1,3 @@
+kompiliert mit ubuntu for windows
+
+da auf der virtuellen maschine nix läuft hat der prozess die task id 1
